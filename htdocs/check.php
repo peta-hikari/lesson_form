@@ -1,13 +1,42 @@
 <?php
 
-    //$infomation = new setData;
-    //$infomation -> setData($_POST['name'], $_POST['maile'], $_POST['main'], $_POST['job'], $_POST['gender'], $_POST['check']);
-
+    include '../model/setData.php';
+    //include '../model/checkErrors.php';
+    $setdata= new setData;
+    //$checkerrors = new checkErrors;
     $pattern = "/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/";
 
     $errors = [];
 
-    if(isset($_POST['name'])){
+    $input_info['name']   = $setdata->setData($_POST['name']);
+    $input_info['maile']  = $setdata->setData($_POST['maile']);
+    $input_info['main']   = $setdata->setData($_POST['main']);
+    $input_info['job']    = $setdata->setData($_POST['job']);
+    $input_info['gender'] = $setdata->setData($_POST['gender']);
+    $input_info['check']  = $setdata->setData($_POST['check']);
+    //var_dump($input_info);
+
+    if(empty($input_info['name'])){
+        $errors['name'] = 'name miss ';
+    }
+    if(empty($input_info['maile']) || !preg_match($pattern, $input_info['maile'])){
+        $errors['maile'] = 'maile miss ';
+    }
+    if(empty($input_info['main'])){
+        $errors['main'] = 'main miss ';
+    }
+    if(empty($input_info['check'])){
+        $errors['check'] = 'please check ';
+    }
+    if(empty($errors)) {
+        include '../view/check_html.php';
+        exit();
+    }
+
+    include '../view/index_html.php';
+    exit();
+
+   /* if(isset($_POST['name'])){
         $input_name = $_POST['name'];
     }
     if(isset($_POST['maile'])){
@@ -24,10 +53,9 @@
     }
     if(isset($_POST['check'])){
         $input_check = $_POST['check'];
-    }
+    }*/
 
-
-    if(empty($input_name)){
+    /*if(empty($input_name)){
         $errors['name'] = 'name miss ';
     }
     if(empty($input_maile) || !preg_match($pattern, $input_maile)){
@@ -42,19 +70,7 @@
     if(empty($errors)) {
         include '../view/check_html.php';
         exit();
-    }
-
-    include '../view/index_html.php';
-    exit();
+    }*/
 
        // header('Location: http://localhost:8888/');
        // exit();
-
-
-    /*if( !preg_match($pattern, $input_maile)){
-
-        include '../view/index_html.php';
-        exit();
-    }*/
-
-    //include '../view/check_html.php';

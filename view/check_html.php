@@ -9,11 +9,11 @@
 
 <body>
 
-    <p><?php echo $input_name; ?></p>
-    <p><?php echo $input_main; ?></p>
-    <p><?php echo $input_job; ?></p>
-    <p><?php echo $input_sei; ?></p>
-    <p><?php echo $input_check; ?></p>
+    <?php foreach($input_info as $key => $data){ ?>
+          <p>
+              <?php echo "$key : $data"; ?>
+          </p>
+    <?php } ?>
 
     <h1>完了</h1>
 
