@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    
-    <p><?php echo $input_name ?></p>
-    <p><?php echo $input_main ?></p>
-    <p><?php echo $input_job ?></p>
-    <p><?php echo $input_sei ?></p>
-    <p><?php echo $input_check ?></p>
-    
+
+    <p><?php echo $input_name; ?></p>
+    <p><?php echo $input_main; ?></p>
+    <p><?php echo $input_job; ?></p>
+    <p><?php echo $input_sei; ?></p>
+    <p><?php echo $input_check; ?></p>
+
     <h1>完了</h1>
-    
+
 </body>
 </html>

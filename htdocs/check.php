@@ -1,11 +1,6 @@
 <?php
 
-    $input_name = '';
-    $input_main = '';
-    $input_maile = '';
-    $input_job = '';
-    $input_sei = '';
-    $input_check = '';
+ 
 
     //$infomation = new setData;
     //$infomation -> setData($_POST['name'], $_POST['maile'], $_POST['main'], $_POST['job'], $_POST['gender'], $_POST['check']);
@@ -16,14 +11,12 @@
 
     if(isset($_POST['name'])){
         $input_name = $_POST['name'];
-    } else {
-        echo 'name empty';
-    }
-    if(isset($_POST['main'])){
-        $input_main = $_POST['main'];
     }
     if(isset($_POST['maile'])){
         $input_maile = $_POST['maile'];
+    }
+    if(isset($_POST['main'])){
+        $input_main = $_POST['main'];
     }
     if(isset($_POST['job'])){
         $input_job = $_POST['job'];
@@ -48,8 +41,8 @@
     if(empty($input_check)){
         $errors['check'] = 'please check ';
     }
-    if(!empty($error)) {
-        include '../view/index_html.php';
+    if(empty($errors)) {
+        include '../view/check_html.php';
         exit();
     }
 
@@ -66,4 +59,4 @@
         exit();
     }*/
 
-    include '../view/check_html.php';
+    //include '../view/check_html.php';

@@ -8,14 +8,14 @@
 
 <body>
     <form method = 'post'>
-      
-        <p>名前<input type = "text" name = "name" value = <?php echo $input_name ?>></p>
+
+        <p>名前<input type = "text" name = "name" value ="<?php echo $input_name; ?>"></p>
         <?php if(!empty($errors['name'])){ echo $errors['name'];} ?>
-        
-        <p>maile<input type = "emaile" name = "maile" value = <?php echo $input_maile ?>></p>
+
+        <p>maile<input type = "emaile" name = "maile" value = "<?php echo $input_maile; ?>"></p>
         <?php if(!empty($errors['maile'])){ echo $errors['maile'];} ?>
 
-        <p>本文<input type = "text" name = "main" value = <?php echo $input_main ?>></p>
+        <p>本文<input type = "text" name = "main" value = "<?php echo $input_main; ?>"></p>
         <?php if(!empty($errors['main'])){ echo $errors['main'];} ?>
 
         <p>
@@ -32,7 +32,6 @@
         <?php if(!empty($errors['check'])){echo $errors['check']; } ?>
 
         <p><input type ="submit" value = '送信' formaction = "check.php"></p>
-
+    </form>
 </body>
 </html>
-<!--pattern="^[a-zA-Z0-9!$&*.=^`|~#%'+\/?_{}-]+@([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,4}$"-->
