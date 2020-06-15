@@ -1,7 +1,5 @@
 <?php
 
- 
-
     //$infomation = new setData;
     //$infomation -> setData($_POST['name'], $_POST['maile'], $_POST['main'], $_POST['job'], $_POST['gender'], $_POST['check']);
 
