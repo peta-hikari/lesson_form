@@ -2,6 +2,16 @@
 
     include '../model/setData.php';
     include '../model/checkErrors.php';
+
+    $output_item = [
+        "name" => '名前',
+        "maile" => 'メールアドレス',
+        "main" => '本文',
+        "job" => '業種',
+        "gender" => '性別',
+        "check" => '同意しました'
+    ];
+
     $setdata= new setData;
     $checkerrors = new checkErrors;
     $errors = [];
@@ -17,7 +27,7 @@
     $input_info['gender'] = $setdata->setData($_POST['gender']);
     $input_info['check']  = $setdata->setData($_POST['check']);
 
-    $errors = $checkerrors->checkErrors($input_info);
+    $errors = $checkerrors->checkEmpty($input_info);
 
     if(empty($errors)) {
         include '../view/check_html.php';

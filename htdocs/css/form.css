@@ -1,8 +1,38 @@
 .main{
-    margin: auto;
-    background:#0f0;
+    text-align: center;
+    line-height: 1rem;
+
+}
+.headline{
+    width: 100%;
+    height: 50px;
+    background: #10abff;
+}
+.guide{
+    line-height: 0.5rem;
+}
+.headline h2{
+    color:#fff;
+    line-height: 50px;
+}
+.section {
+    margin: 2rem;
+}
+  .section p{
+    margin: 0.5rem;
+  }
+.error{
+    color: #ad0000;
+    font-size: 12px;
+    line-height: 2rem;
 }
 
-h2{
-    color: #f00;
+.footer{
+    width: 100%;
+    height: 50px;
+    background: #10abff;
 }
+  .footer p{
+      color: #fff;
+      line-height: 50px;
+  }
