@@ -1,10 +1,10 @@
 <?php
 
     include '../model/setData.php';
-    //include '../model/checkErrors.php';
+    include '../model/checkErrors.php';
     $setdata= new setData;
-    //$checkerrors = new checkErrors;
-    $pattern = "/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/";
+    $checkerrors = new checkErrors;
+    //$pattern = "/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/";
 
     $errors = [];
 
@@ -14,9 +14,19 @@
     $input_info['job']    = $setdata->setData($_POST['job']);
     $input_info['gender'] = $setdata->setData($_POST['gender']);
     $input_info['check']  = $setdata->setData($_POST['check']);
-    //var_dump($input_info);
 
-    if(empty($input_info['name'])){
+    $errors = $checkerrors->checkErrors($input_info);
+
+    if(empty($errors)) {
+        include '../view/check_html.php';
+        exit();
+    }
+
+    include '../view/index_html.php';
+    exit();
+
+
+    /*if(empty($input_info['name'])){
         $errors['name'] = 'name miss ';
     }
     if(empty($input_info['maile']) || !preg_match($pattern, $input_info['maile'])){
@@ -27,14 +37,7 @@
     }
     if(empty($input_info['check'])){
         $errors['check'] = 'please check ';
-    }
-    if(empty($errors)) {
-        include '../view/check_html.php';
-        exit();
-    }
-
-    include '../view/index_html.php';
-    exit();
+    }*/
 
    /* if(isset($_POST['name'])){
         $input_name = $_POST['name'];
@@ -73,4 +76,4 @@
     }*/
 
        // header('Location: http://localhost:8888/');
-       // exit();
+       // exit();_*/
