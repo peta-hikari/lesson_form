@@ -8,6 +8,7 @@
         'gender' => '',
         'check'  => ''
     ];
+
   /* $input_name = '';
      $input_maile = '';
      $input_main = '';

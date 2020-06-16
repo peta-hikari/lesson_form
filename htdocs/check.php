@@ -4,9 +4,11 @@
     include '../model/checkErrors.php';
     $setdata= new setData;
     $checkerrors = new checkErrors;
-    //$pattern = "/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/";
-
     $errors = [];
+
+    if (empty($_SERVER["HTTP_REFERER"])) {
+        header('Location:  http://localhost:8888/');
+    }
 
     $input_info['name']   = $setdata->setData($_POST['name']);
     $input_info['maile']  = $setdata->setData($_POST['maile']);
@@ -25,7 +27,7 @@
     include '../view/index_html.php';
     exit();
 
-
+    //$pattern = "/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/";
     /*if(empty($input_info['name'])){
         $errors['name'] = 'name miss ';
     }

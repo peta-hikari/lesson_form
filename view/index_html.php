@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>form</title>
+  <link rel="stylesheet" type="text/css" href="css/form.css">
 
 </head>
 
 <body>
-    <form method = 'post'>
+  <div class="main">
+  <h2> お問い合わせ</h2>
+  <p> 下記の項目をご記入ください。</p>
+
+  <form method = 'post'>
 
         <p>名前<input type = "text" name = "name" value ="<?php echo $input_info['name']; ?>"></p>
         <?php if(!empty($errors['name'])){ echo $errors['name'];} ?>
