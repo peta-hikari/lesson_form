@@ -25,9 +25,9 @@
 
       <div class = "section">
         <p>メールアドレス</p>
-        <input type = "emaile" name = "maile" value = "<?php echo $input_info['maile']; ?>">
+        <input type = "email" name = "mail" value = "<?php echo $input_info['mail']; ?>">
         <div class = "error">
-          <?php if(!empty($errors['maile'])){ echo $errors['maile'];} ?>
+          <?php if(!empty($errors['mail'])){ echo $errors['mail'];} ?>
         </div>
       </div>
 

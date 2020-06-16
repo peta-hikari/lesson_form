@@ -2,7 +2,7 @@
 
     $input_info =[
         'name'   => '',
-        'maile'  => '',
+        'mail'  => '',
         'main'   => '',
         'job'    => '',
         'gender' => '',
@@ -10,7 +10,7 @@
     ];
 
   /* $input_name = '';
-     $input_maile = '';
+     $input_mail = '';
      $input_main = '';
      $input_job = '';
      $input_sei = '';

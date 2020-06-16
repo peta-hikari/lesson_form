@@ -5,7 +5,7 @@
 
     $output_item = [
         "name" => '名前',
-        "maile" => 'メールアドレス',
+        "mail" => 'メールアドレス',
         "main" => '本文',
         "job" => '業種',
         "gender" => '性別',
@@ -21,7 +21,7 @@
     }
 
     $input_info['name']   = $setdata->setData($_POST['name']);
-    $input_info['maile']  = $setdata->setData($_POST['maile']);
+    $input_info['mail']   = $setdata->setData($_POST['mail']);
     $input_info['main']   = $setdata->setData($_POST['main']);
     $input_info['job']    = $setdata->setData($_POST['job']);
     $input_info['gender'] = $setdata->setData($_POST['gender']);
@@ -41,8 +41,8 @@
     /*if(empty($input_info['name'])){
         $errors['name'] = 'name miss ';
     }
-    if(empty($input_info['maile']) || !preg_match($pattern, $input_info['maile'])){
-        $errors['maile'] = 'maile miss ';
+    if(empty($input_info['mail']) || !preg_match($pattern, $input_info['mail'])){
+        $errors['mail'] = 'mail miss ';
     }
     if(empty($input_info['main'])){
         $errors['main'] = 'main miss ';
@@ -54,8 +54,8 @@
    /* if(isset($_POST['name'])){
         $input_name = $_POST['name'];
     }
-    if(isset($_POST['maile'])){
-        $input_maile = $_POST['maile'];
+    if(isset($_POST['mail'])){
+        $input_mail = $_POST['mail'];
     }
     if(isset($_POST['main'])){
         $input_main = $_POST['main'];
@@ -73,8 +73,8 @@
     /*if(empty($input_name)){
         $errors['name'] = 'name miss ';
     }
-    if(empty($input_maile) || !preg_match($pattern, $input_maile)){
-        $errors['maile'] = 'maile miss ';
+    if(empty($input_mail) || !preg_match($pattern, $input_mail)){
+        $errors['mail'] = 'mail miss ';
     }
     if(empty($input_main)){
         $errors['main'] = 'main miss ';
