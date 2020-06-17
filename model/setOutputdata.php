@@ -1,6 +1,6 @@
 <?php
 
-class displayData {
+class setOutputdata {
     protected $jobs = [
                   'SE'=>'SE',
                   '営業'=>'営業'
@@ -13,7 +13,7 @@ class displayData {
 
     protected $output_info = [];
 
-    public function displayData($input_info = []){
+    public function setOutputdata($input_info = []){
         foreach($input_info as $key => $data){
             if($key == 'job'){
                 $this->setJob($data);

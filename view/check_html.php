@@ -42,9 +42,11 @@
         <?php echo $output_info['gender']; ?>
       </div>
 
-      <p><input type = "submit" value = '戻る' formaction = "index.php" class="button"></p>
-      <p><input type = "submit" value = '送信' class="button"></p>
-    </div>
+      <div class="btn">
+        <p><input type = "submit" value = '戻る' formaction = "index.php" class="button"></p>
+        <p><input type = "submit" value = '送信' class="button"></p>
+      </div>
+      </div>
     <div class="footer">
       <p>&copypeta-hikari</p>
     </div>

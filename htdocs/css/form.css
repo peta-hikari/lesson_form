@@ -35,6 +35,11 @@
     line-height: 2rem;
 }
 
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
 .button {
     display: inline-block;
     border-radius : 7%;
@@ -47,6 +52,7 @@
     line-height: 1em;
     transition: .3s;         /* なめらか変化 */
     border: 2px solid #10abff;
+    margin-left: 1rem;
 }
 
 .button:hover {

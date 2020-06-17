@@ -52,7 +52,6 @@
         <div class = "error">
           <?php if(!empty($errors['job'])){ echo $errors['job'];} ?>
         </div>
-        </p>
       </div>
 
       <div class = "section">

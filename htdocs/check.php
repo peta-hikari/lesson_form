@@ -2,20 +2,11 @@
 
     include '../model/setData.php';
     include '../model/checkErrors.php';
-    include '../model/displayData.php';
-
-    $output_items = [
-        "name" => '名前',
-        "mail" => 'メールアドレス',
-        "main" => '本文',
-        "job" => '業種',
-        "gender" => '性別',
-        "check" => '同意しました'
-    ];
+    include '../model/setOutputdata.php';
 
     $setdata= new setData;
     $checkerrors = new checkErrors;
-    $displaydata = new displayData;
+    $outputdata = new setOutputdata;
     $errors = [];
     $output_info = [];
 
@@ -32,7 +23,7 @@
 
     $errors = $checkerrors->checkErrors($input_info);
     if(empty($errors)) {
-        $output_info = $displaydata->displayData($input_info);
+        $output_info = $outputdata->setOutputdata($input_info);
         include '../view/check_html.php';
         exit();
     }
