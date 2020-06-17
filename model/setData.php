@@ -6,7 +6,7 @@
        * @param string $data
        * @return string
        */
-        public function setData($data=NULL){
+        public function setData_2($data){
             if(isset($data)){
                 return $data;
             }

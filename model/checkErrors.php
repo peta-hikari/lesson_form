@@ -107,7 +107,7 @@ class checkErrors {
     }
 
     protected function checkLength($data, $key){
-        if(mb_strlen($data) > $this->errors_length[$key]){
+        if(mb_strlen($data, 'UTF-8') > $this->errors_length[$key]){
             $this->errors[$key] = '文字数がオーバーしています。入力し直してください。';
         }
     }

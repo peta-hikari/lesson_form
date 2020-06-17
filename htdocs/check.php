@@ -14,12 +14,12 @@
         header('Location:  http://localhost:8000/');
     }
 
-    $input_info['name']   = $setdata->setData($_POST['name']);
-    $input_info['mail']   = $setdata->setData($_POST['mail']);
-    $input_info['main']   = $setdata->setData($_POST['main']);
-    $input_info['job']    = $setdata->setData($_POST['job']);
-    $input_info['gender'] = $setdata->setData($_POST['gender']);
-    $input_info['check']  = $setdata->setData($_POST['check']);
+    $input_info['name']   = $setdata->setData_2($_POST['name']);
+    $input_info['mail']   = $setdata->setData_2($_POST['mail']);
+    $input_info['main']   = $setdata->setData_2($_POST['main']);
+    $input_info['job']    = $setdata->setData_2($_POST['job']);
+    $input_info['gender'] = $setdata->setData_2($_POST['gender']);
+    $input_info['check']  = $setdata->setData_2($_POST['check']);
 
     $errors = $checkerrors->checkErrors($input_info);
     if(empty($errors)) {

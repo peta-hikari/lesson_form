@@ -12,7 +12,7 @@
     <div class="headline">
       <h2> お問い合わせ</h2>
     <div>
-    <div class="guide">  
+    <div class="guide">
       <p> 下記の項目をご記入ください。</p>
     </div>
 
