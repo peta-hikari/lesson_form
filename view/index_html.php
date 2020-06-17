@@ -68,7 +68,7 @@
           <?php if(!empty($errors['check'])){echo $errors['check']; } ?>
         </div>
 
-        <p><input type ="submit" value = '確認' formaction = "check.php"></p>
+        <p><input type ="submit" value = '確認' formaction = "check.php" class="button"></p>
 
         <div class="footer">
           <p>&copypeta-hikari</p>

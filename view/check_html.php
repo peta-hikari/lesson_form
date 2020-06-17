@@ -16,14 +16,34 @@
       <p>お間違いがなければ送信ボタンを押してください。</p>
     </div>
 
-    <?php foreach($output_info as $key => $data){ ?>
-          <p>
-              <?php echo "$output_items[$key] : $output_info[$key]"; ?>
-          </p>
-    <?php } ?>
+    <div class="display">
+      <div class="section">
+        <p>名前</p>
+        <?php echo $output_info['name']; ?>
+      </div>
 
-    <p><input type ="submit" value = '送信'></p>
+      <div class="section">
+        <p>メールアドレス</p>
+        <?php echo $output_info['mail']; ?>
+      </div>
 
+      <div class="section">
+        <p>本文</p>
+        <?php echo $output_info['main']; ?>
+      </div>
+
+      <div class="section">
+        <p>業種</p>
+        <?php echo $output_info['job']; ?>
+      </div>
+
+      <div class="section">
+        <p>性別</p>
+        <?php echo $output_info['gender']; ?>
+      </div>
+      <p><input type = "submit" value = '戻る' class="button"></p>
+      <p><input type = "submit" value = '送信' class="button"></p>
+    </div>
     <div class="footer">
       <p>&copypeta-hikari</p>
     </div>
