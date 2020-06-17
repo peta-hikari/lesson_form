@@ -10,6 +10,7 @@
 }
 .guide{
     line-height: 0.5rem;
+    margin: 3rem
 }
 .headline h2{
     color:#fff;
@@ -17,10 +18,17 @@
 }
 .section {
     margin: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 1px #ccc;
 }
   .section p{
+    display: inline;
     margin: 0.5rem;
   }
+    .section p.condition{
+      font-size: 14px;
+      color: #666;
+    }
 .error{
     color: #ad0000;
     font-size: 12px;
@@ -29,7 +37,7 @@
 
 .button {
     display: inline-block;
-    border-radius : 5%;
+    border-radius : 7%;
     font-size: 14pt;
     text-align: center;
     cursor: pointer;

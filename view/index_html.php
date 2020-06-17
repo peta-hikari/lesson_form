@@ -12,11 +12,14 @@
     <div class="headline">
       <h2> お問い合わせ</h2>
     <div>
-    <p> 下記の項目をご記入ください。</p>
+    <div class="guide">  
+      <p> 下記の項目をご記入ください。</p>
+    </div>
 
     <form method = 'post'>
       <div class="section">
         <p>名前</p>
+        <p class="condition">10文字以内</p>
         <input type = "text" name = "name" value ="<?php echo $input_info['name']; ?>">
         <div class = "error">
           <?php if(!empty($errors['name'])){ echo $errors['name'];} ?>
@@ -33,6 +36,7 @@
 
       <div class = "section">
         <p>本文</p>
+        <p class="condition">400文字以内</p>
         <input type = "text" name = "main" value = "<?php echo $input_info['main']; ?>">
         <div class = "error">
           <?php if(!empty($errors['main'])){ echo $errors['main'];} ?>
@@ -61,6 +65,7 @@
       </div>
 
         <p>
+          <p>個人情報の取り扱いについて</P>
           <input type="hidden" name="check" value="">
           <input type = "checkbox" name = "check" value ="on">同意しました
         </p>

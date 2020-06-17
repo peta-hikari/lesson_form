@@ -41,7 +41,8 @@
         <p>性別</p>
         <?php echo $output_info['gender']; ?>
       </div>
-      <p><input type = "submit" value = '戻る' class="button"></p>
+
+      <p><input type = "submit" value = '戻る' formaction = "index.php" class="button"></p>
       <p><input type = "submit" value = '送信' class="button"></p>
     </div>
     <div class="footer">
