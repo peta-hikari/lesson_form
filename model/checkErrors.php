@@ -25,6 +25,9 @@ class checkErrors {
                 "check"  => 10
               ];
 
+    protected $job_array    = ['SE', '営業'];
+    protected $gender_array = ['M', 'F'];
+
     /*
      * @ver string
      */
@@ -41,6 +44,10 @@ class checkErrors {
                 $this->checkEmpty($key);
             } else if($key == 'mail'){
                 $this->checkMail($data);
+            } else if($key == 'job'){
+                    $this->checkJob($data);
+            } else if($key == 'gender'){
+                    $this->checkGender($data);
             } else {
                 $this->checkChar($data, $key);
             }
@@ -59,7 +66,7 @@ class checkErrors {
      */
     protected function checkChar($data ,$key){
         if(preg_match($this->char_pattern, $data)){
-            $this->errors[$key] = '禁則文字が含まれています。入力し直してください。';
+            $this->errors[$key] = '禁則文字が含まれています。*+?{}()[]^$|/-\"\'は使えません。';
         }
     }
 
@@ -70,6 +77,32 @@ class checkErrors {
     protected function checkMail($data){
         if(!preg_match($this->mail_pattern, $data)){
             $this->errors['mail'] = "メールアドレスではありません。入力し直してください。";
+        }
+    }
+
+    protected function checkJob($data){
+        $check = false;
+        for($key = 0; $key < count($this->job_array); $key++){
+            if($data == $this->job_array[$key]){
+                $check = true;
+                break;
+            }
+        }
+        if($check == false){
+            $this->errors['job'] = "不正な入力です。";
+        }
+    }
+
+    protected function checkGender($data){
+        $check = false;
+        for($key = 0; $key < count($this->gender_array); $key++){
+            if($data == $this->gender_array[$key]){
+                $check = true;
+                break;
+            }
+        }
+        if(!$check){
+            $this->errors['gender'] = "不正な入力です。";
         }
     }
 

@@ -45,6 +45,9 @@
             <option value = "SE">SE</option>
             <option value = "営業">営業</option>
         </select>
+        <div class = "error">
+          <?php if(!empty($errors['job'])){ echo $errors['job'];} ?>
+        </div>
         </p>
       </div>
 
@@ -52,6 +55,9 @@
         <p>性別</p>
         <input type = "radio" name = "gender" value = "M" checked>男性
         <input type = "radio" name = "gender" value = "F">女性
+        <div class = "error">
+          <?php if(!empty($errors['gender'])){ echo $errors['gender'];} ?>
+        </div>
       </div>
 
         <p>
