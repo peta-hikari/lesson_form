@@ -27,7 +27,7 @@
     $input_info['gender'] = $setdata->setData($_POST['gender']);
     $input_info['check']  = $setdata->setData($_POST['check']);
 
-    $errors = $checkerrors->checkEmpty($input_info);
+    $errors = $checkerrors->checkErrors($input_info);
 
     if(empty($errors)) {
         include '../view/check_html.php';

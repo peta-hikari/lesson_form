@@ -17,7 +17,7 @@
     <form method = 'post'>
       <div class="section">
         <p>名前</p>
-        <input type = "text" name = "name"　maxlength="10" value ="<?php echo $input_info['name']; ?>">
+        <input type = "text" name = "name" value ="<?php echo $input_info['name']; ?>">
         <div class = "error">
           <?php if(!empty($errors['name'])){ echo $errors['name'];} ?>
         </div>
