@@ -16,9 +16,9 @@
       <p>お間違いがなければ送信ボタンを押してください。</p>
     </div>
 
-    <?php foreach($input_info as $key => $data){ ?>
+    <?php foreach($output_info as $key => $data){ ?>
           <p>
-              <?php echo "$output_item[$key] : $data"; ?>
+              <?php echo "$output_items[$key] : $output_info[$key]"; ?>
           </p>
     <?php } ?>
 

@@ -2,8 +2,9 @@
 
     include '../model/setData.php';
     include '../model/checkErrors.php';
+    include '../model/displayData.php';
 
-    $output_item = [
+    $output_items = [
         "name" => '名前',
         "mail" => 'メールアドレス',
         "main" => '本文',
@@ -14,10 +15,12 @@
 
     $setdata= new setData;
     $checkerrors = new checkErrors;
+    $displaydata = new displayData;
     $errors = [];
+    $output_info = [];
 
     if (empty($_SERVER["HTTP_REFERER"])) {
-        header('Location:  http://localhost:8888/');
+        header('Location:  http://localhost:8000/');
     }
 
     $input_info['name']   = $setdata->setData($_POST['name']);
@@ -28,8 +31,8 @@
     $input_info['check']  = $setdata->setData($_POST['check']);
 
     $errors = $checkerrors->checkErrors($input_info);
-
     if(empty($errors)) {
+        $output_info = $displaydata->displayData($input_info);
         include '../view/check_html.php';
         exit();
     }
