@@ -85,27 +85,13 @@ class CheckErrors {
     }
 
     protected function checkJob($data){
-        $check = false;
-        for($key = 0; $key < count($this->job_array); $key++){
-            if($data == $this->job_array[$key]){
-                $check = true;
-                break;
-            }
-        }
-        if($check == false){
+        if(!in_array($data, $this->job_array)){
             $this->errors['job'] = "不正な入力です。";
         }
     }
 
     protected function checkGender($data){
-        $check = false;
-        for($key = 0; $key < count($this->gender_array); $key++){
-            if($data == $this->gender_array[$key]){
-                $check = true;
-                break;
-            }
-        }
-        if(!$check){
+        if(!in_array($data, $this->gender_array)){
             $this->errors['gender'] = "不正な入力です。";
         }
     }

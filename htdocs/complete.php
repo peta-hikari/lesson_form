@@ -5,5 +5,5 @@
     $outputcsv = new OutputCSV;
 
     //$input_info = $setdata->getInputdata();
-    //$outputcsv->outputDataCSV($input_info);
+    $outputcsv->outputDataCSV($_POST[$input_info]);
     include '../view/complete_html.php';

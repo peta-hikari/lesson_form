@@ -42,6 +42,7 @@
         <?php echo $output_info['gender']; ?>
       </div>
       <form method='post'>
+        <input type="hidden" value="<?php echo $input_info ?>">
         <div class="btn">
           <p><input type="submit" value='戻る' formaction="index.php" class="button"></p>
           <p><input type="submit" value='送信' formaction="complete.php" class="button"></p>

@@ -67,7 +67,7 @@
         <p>性別</p>
         <input type="radio" name="gender" value="M" checked>男性
         <input type="radio" name="gender" value="F">女性
-        <?php if(!empty($errors['gennder'])){ ?>
+        <?php if(!empty($errors['gender'])){ ?>
           <div class="error">
             <?php echo $errors['gender']; ?>
           </div>
