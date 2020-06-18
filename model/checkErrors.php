@@ -1,6 +1,6 @@
 <?php
 
-class checkErrors {
+class CheckErrors {
 
     /*
      * @ver array
@@ -38,7 +38,7 @@ class checkErrors {
      * @param array $input_info
      * @return array
      */
-    public function checkErrors($input_info = []){
+    public function checkDataerrors($input_info){
         foreach($input_info as $key => $data){
             if(empty($data)){
                 $this->checkEmpty($key);
@@ -54,6 +54,10 @@ class checkErrors {
             $this->checkLength($data, $key);
         }
         return $this->errors;
+    }
+
+    public function emptyErrors($errors){
+        return empty($errors);
     }
 
     protected function checkEmpty($key){

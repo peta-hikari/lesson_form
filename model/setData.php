@@ -1,12 +1,12 @@
 <?php
 
-    class setData {
+    class SetData {
 
       /*
        * @param string $data
        * @return string
        */
-        public function setData_2($data){
+        public function setInputdata($data){
             if(isset($data)){
                 return $data;
             }
