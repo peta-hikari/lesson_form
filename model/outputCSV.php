@@ -3,7 +3,7 @@
 class OutputCSV {
 
     protected $file_handler;
-    protected $output_data = [];
+    //protected $output_data = [];
 
     public function outputDataCSV($input_info){
         $file_handler = fopen("../csv/contact_info.csv", "a");
