@@ -27,6 +27,7 @@ class CheckErrors {
 
     protected $job_array    = ['SE', '営業'];
     protected $gender_array = ['M', 'F'];
+    protected $check_value  = 'on';
 
     /*
      * @ver string
@@ -48,6 +49,8 @@ class CheckErrors {
                     $this->checkJob($data);
             } else if($key == 'gender'){
                     $this->checkGender($data);
+            } else if($key == 'check'){
+                    $this->checkConsent($data);
             } else {
                 $this->checkChar($data, $key);
             }
@@ -99,6 +102,12 @@ class CheckErrors {
     protected function checkLength($data, $key){
         if(mb_strlen($data, 'UTF-8') > $this->errors_length[$key]){
             $this->errors[$key] = '文字数がオーバーしています。入力し直してください。';
+        }
+    }
+
+    protected function checkConsent($data){
+        if($this->check_value != $data){
+            $this->errors['check'] = '不正な入力です。';
         }
     }
 }

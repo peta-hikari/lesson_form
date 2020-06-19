@@ -3,12 +3,10 @@
     include '../model/setData.php';
     include '../model/checkErrors.php';
     include '../model/setOutputdata.php';
-    include '../model/OutputCSV.php';
 
     $setdata     = new SetData;
     $checkerrors = new CheckErrors;
     $outputdata  = new SetOutputdata;
-    $outputcsv   = new OutputCSV;
 
     $errors = [];
     $output_info = [];
@@ -40,7 +38,6 @@
     }
 
     $output_info = $outputdata->setOutputdatas($input_info);
-    //$outputcsv->outputDataCSV($input_info);
     include '../view/check_html.php';
     exit();
 
