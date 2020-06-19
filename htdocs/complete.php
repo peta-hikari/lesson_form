@@ -2,9 +2,11 @@
     include '../model/outputCSV.php';
     include '../model/checkErrors.php';
     include '../model/setData.php';
-    $outputcsv = new OutputCSV;
+    include '../model/inputDB.php';
+    $outputcsv   = new OutputCSV;
     $checkerrors = new CheckErrors;
     $setdata     = new SetData;
+    $inputdb     = new InputDB;
     $input_info = [];
     $errors = [];
 
@@ -21,5 +23,7 @@
         exit();
     }
 
+    //Var_dump($input_info['check']);
+    $inputdb->saveDbPostData($input_info);
     $outputcsv->outputDataCSV($input_info);
     include '../view/complete_html.php';
