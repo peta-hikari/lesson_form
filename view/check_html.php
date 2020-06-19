@@ -42,6 +42,9 @@
         <?php echo $output_info['gender']; ?>
       </div>
       <form method='post'>
+        <?php foreach($input_info as $key => $data){ ?>
+            <input type="hidden" name="input_csv[]" value="<?php echo $data; ?>">
+        <?php } ?>
         <input type="hidden" value="<?php echo $input_info ?>">
         <div class="btn">
           <p><input type="submit" value='戻る' formaction="index.php" class="button"></p>

@@ -40,7 +40,7 @@
     }
 
     $output_info = $outputdata->setOutputdatas($input_info);
-    $outputcsv->outputDataCSV($input_info);
+    //$outputcsv->outputDataCSV($input_info);
     include '../view/check_html.php';
     exit();
 
