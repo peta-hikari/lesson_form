@@ -6,7 +6,7 @@ class InputDB {
 	/**
 	 * コネクション確保
 	 */
-	function __construct() {
+	public function __construct() {
 		try {
 			$this->pdo = new PDO(
                 'mysql:dbname=form_contact;host=localhost;charset=utf8mb4',
