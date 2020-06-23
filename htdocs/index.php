@@ -4,9 +4,9 @@
     $setdata     = new SetData;
     $input_info =[];
 
-    $input_data = ['name', 'mail', 'main','job', 'gender', 'check'];
+    $input_items = $setdata->getInputitems();
 
-    foreach($input_data as $key){
+    foreach($input_items as $key){
         if(isset($_POST[$key])){
             $setdata->setInputdata($_POST[$key], $key);
         }

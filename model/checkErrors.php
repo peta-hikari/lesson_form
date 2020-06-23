@@ -7,6 +7,15 @@ class CheckErrors {
      */
     public $errors = [];
 
+    protected $data_validation=[
+                  'name'   => 'Length|Ban|Empty',
+                  'mail'   => 'Length|Mail|Empty',
+                  'main'   => 'Ban|Length|Empty',
+                  'job'    => 'Job',
+                  'gender' => 'Gender',
+                  'check'  => 'Check|Empty'
+              ];
+
     protected $errors_empty = [
                 "name"   => '未入力です。名前を入力してください。',
                 "mail"  => '未入力です。メールアドレスを入力してください。',
@@ -39,7 +48,7 @@ class CheckErrors {
      * @param array $input_info
      * @return array
      */
-    public function checkDataerrors($input_info){
+    /*public function checkDataerrors($input_info){
         foreach($input_info as $key => $data){
             if(empty($data)){
                 $this->checkEmpty($key);
@@ -56,15 +65,39 @@ class CheckErrors {
             }
             $this->checkLength($data, $key);
         }
+        //return $this->errors;
+        return empty($this->errors);
+    }*/
+    public function checkDataerrors($input_info){
+        foreach($input_info as $key => $data){
+            $validations = $this->getVali($key);
+            foreach($validations as $vali){
+                if($vali == 'Mail') $this->checkMail($data);
+                if($vali == 'Job') $this->checkJob($data);
+                if($vali == 'Gender') $this->checkGender($data);
+                if($vali == 'Check') $this->checkConsent($data);
+                if($vali == 'Empty') $this->checkEmpty($data, $key);
+                if($vali == 'Length') $this->checkLength($data, $key);
+                if($vali == 'Ban') $this->checkChar($data, $key);
+            }
+        }
+        //return var_dump($this->errors);
+        return empty($this->errors);
+    }
+
+    public function getVali($key){
+       $vali = explode('|', $this->data_validation[$key]);
+        return $vali;
+    }
+
+    public function getErrors(){
         return $this->errors;
     }
 
-    public function emptyErrors($errors){
-        return empty($errors);
-    }
-
-    protected function checkEmpty($key){
-        $this->errors[$key] = $this->errors_empty[$key];
+    protected function checkEmpty($data, $key){
+        if(empty($data)){
+            $this->errors[$key] = $this->errors_empty[$key];
+        }
     }
 
     /*

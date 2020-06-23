@@ -15,13 +15,6 @@
         header('Location:  http://localhost:8000/');
     }
 
-   /* $input_info['name']   = $setdata->setInputdata($_POST['name']);
-    $input_info['mail']   = $setdata->setInputdata($_POST['mail']);
-    $input_info['main']   = $setdata->setInputdata($_POST['main']);
-    $input_info['job']    = $setdata->setInputdata($_POST['job']);
-    $input_info['gender'] = $setdata->setInputdata($_POST['gender']);
-    $input_info['check']  = $setdata->setInputdata($_POST['check']);*/
-
     $setdata->setInputdata($_POST['name'], 'name');
     $setdata->setInputdata($_POST['mail'], 'mail');
     $setdata->setInputdata($_POST['main'], 'main');
@@ -31,8 +24,11 @@
 
     $input_info = $setdata->getInputdata();
 
-    $errors = $checkerrors->checkDataerrors($input_info);
-    if(!$checkerrors->emptyErrors($errors)) {
+    //echo $checkerrors->checkDataerrors($input_info);
+   // exit();
+
+    if(! $checkerrors->checkDataerrors($input_info)) {
+        $errors = $checkerrors->getErrors();
         include '../view/index_html.php';
         exit();
     }

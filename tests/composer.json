@@ -1,0 +1,10 @@
+{
+    "name": "hikari/test",
+    "authors": [
+        {
+            "name": "peta-hikari",
+            "email": "hikari.minebayashi@petabit.co.jp"
+        }
+    ],
+    "require": {}
+}

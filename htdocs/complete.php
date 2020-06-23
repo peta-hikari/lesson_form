@@ -10,20 +10,20 @@
     $input_info = [];
     $errors = [];
 
-    $input_data = ['name', 'mail', 'main','job', 'gender', 'check'];
+    $input_items = $setdata->getInputitems();
 
-    foreach($input_data as $key){
+   foreach($input_items as $key){
         $setdata->setInputdata($_POST[$key], $key);
     }
     $input_info = $setdata->getInputdata();
 
-    $errors = $checkerrors->checkDataerrors($input_info);
-    if(!$checkerrors->emptyErrors($errors)) {
+    //$errors = $checkerrors->checkDataerrors($input_info);
+    if(!$checkerrors->checkDataerrors($input_info)) {
+        $errors = $checkerrors->getErrors();
         include '../view/index_html.php';
         exit();
     }
 
-    //Var_dump($input_info['check']);
     $inputdb->saveDbPostData($input_info);
     $outputcsv->outputDataCSV($input_info);
     include '../view/complete_html.php';

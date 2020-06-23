@@ -16,9 +16,9 @@ class InputDB {
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 ]
-            );
+			);
 		} catch (PDOException $e) {
-			echo 'error';
+			echo '送信に失敗しました。もう一度初めからやり直してください。';
 			die();
 		}
 	}
