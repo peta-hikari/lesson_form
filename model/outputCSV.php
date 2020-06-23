@@ -32,9 +32,11 @@ class OutputCSV {
                 $csv_data .= '"'.$value.'",';
             }
             $csv_data .= "\n";
-            foreach( $datas as $value ) {
-                // データを1行ずつCSVファイルに書き込む
-                $csv_data .= '"' . $value['NAME'] . '","' . $value['MAIL'] . '","' . $value['MAIN'] . '","' . $value['JOB'] . '","' . $value['GENDER'] .'","' . $value['CONSENT'] .'"'. "\n";
+            foreach( $datas as $row ) {
+                foreach($row as $key => $value){
+                    $csv_data .= '"' . $row[$key] . '",';
+                }
+                $csv_data .= "\n";
             }
         }
         return $csv_data;
