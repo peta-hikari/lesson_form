@@ -39,4 +39,10 @@ class InputDB {
         $smt->execute();
 
 	}
+
+	public function getDbData(){
+		$sql = "SELECT * FROM contact_info";
+		$res = $this->pdo->query($sql);
+		return $res;
+	}
 }

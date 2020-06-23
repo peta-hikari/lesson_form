@@ -46,7 +46,7 @@ class CheckErrors {
 
     /*
      * @param array $input_info
-     * @return array
+     * @return bool
      */
     /*public function checkDataerrors($input_info){
         foreach($input_info as $key => $data){

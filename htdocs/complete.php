@@ -17,7 +17,6 @@
     }
     $input_info = $setdata->getInputdata();
 
-    //$errors = $checkerrors->checkDataerrors($input_info);
     if(!$checkerrors->checkDataerrors($input_info)) {
         $errors = $checkerrors->getErrors();
         include '../view/index_html.php';
@@ -25,5 +24,6 @@
     }
 
     $inputdb->saveDbPostData($input_info);
-    $outputcsv->outputDataCSV($input_info);
+    //$outputcsv->dbDataCSV($inputdb->getDbData());
+    //$outputcsv->outputDataCSV($input_info);
     include '../view/complete_html.php';
